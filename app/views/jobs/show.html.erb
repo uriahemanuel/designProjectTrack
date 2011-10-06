@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Job number:</b>
+  <%= @job.job_number %>
+</p>
+
+<p>
+  <b>Date added:</b>
+  <%= short_date(@job.created_at) %>
+</p>
+
+<p>
+  <b>Request by:</b>
+  <%= @job.request_by %>
+</p>
+
+<p>
+  <b>Job description:</b>
+  <%= @job.job_description %>
+</p>
+
+<p>
+  <b>Due by:</b>
+  <%= @job.due_by %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @job.priority %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @job.completed %>
+</p>
+
+<p>
+  <b>Designer:</b>
+  <%= @job.designer %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Return to job tracker', jobs_path %>

@@ -1,0 +1,46 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :job_number %> <span class="colorRed">*</span><br /> 
+    <%= f.text_field :job_number %>
+  </div>
+  <div class="field">
+    <%= f.label :request_by %> <span class="colorRed">*</span><br />
+    <%= f.text_field :request_by %>
+  </div>
+  <div class="field">
+    <%= f.label :job_description %> <span class="colorRed">*</span><br />
+    <%= f.text_area :job_description %>
+  </div>
+  <div class="field">
+    <%= f.label :due_by %> <span class="colorRed">*</span><br />
+    <%= f.text_field :due_by %>
+  </div>
+  <div class="field"> 
+    <%= f.label :priority %> <span class="colorRed">*</span><br />
+    <%= select("job", "priority", {"High" => "High", "Med" => "Med", "Low" => "Low" }) %>
+  </div>
+  <div class="field">
+    <%= f.label :completed %> (Leave blank if no) <br />
+    <%= f.check_box :completed %>
+  </div>
+  <div class="field">
+    <%= f.label :designer %> <span class="colorRed">*</span><br />
+    <%= f.text_field :designer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<p><span class="colorRed">*</span> Denotes a required field</p>
+<% end %>

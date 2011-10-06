@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  job_number: 1
+  date_added: MyString
+  request_by: MyString
+  job_description: MyText
+  due_by: MyString
+  priority: MyString
+  completed: false
+  designer: MyString
+
+two:
+  job_number: 1
+  date_added: MyString
+  request_by: MyString
+  job_description: MyText
+  due_by: MyString
+  priority: MyString
+  completed: false
+  designer: MyString

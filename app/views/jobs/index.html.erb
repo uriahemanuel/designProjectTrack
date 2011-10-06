@@ -1,0 +1,42 @@
+<h1>Design Job Tracker</h1>
+
+<table class= "listing">
+  <tr>
+    <th>Job number</th>
+    <th>Date added</th>
+    <th>Request by</th>
+    <th>Job description</th>
+    <th>Due by</th>
+    <th>Priority</th>
+    <th>Completed</th>
+    <th>Designer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr class="<%= cycle("odd", "even") -%>">
+    <td><%= job.job_number %></td>
+    <td><%= short_date(job.created_at) %></td> 
+    <td><%= job.request_by %></td>
+    <td><%= job.job_description %></td>
+    <td><%= job.due_by %></td>
+    <td><%= job.priority %></td>
+    <td><%= job.completed? ? 'yes' : 'no'  %></td> 
+    <td><%= job.designer %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Remove', job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div class="digg_pagination">
+<%= will_paginate @jobs %> 
+</div>
+
+<br />
+
+<%= link_to 'Add a new job', new_job_path %>
